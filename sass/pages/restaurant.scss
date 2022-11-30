@@ -1,0 +1,187 @@
+@import"../utils/mixins.scss";
+@import "../utils/colors.scss";
+@import "../utils/animations.scss";
+
+
+
+
+
+#page-resto {
+
+    header {
+        position: relative;
+        padding: 8px;
+    }
+    
+
+    header::before {
+        @include font-awesome ($font-weight:900);
+        content: "\f060";
+        position: absolute;
+        font-weight: 900;
+        font-size: 1.5em;
+        left: 2rem;
+        top: 38%;
+
+    }
+
+    .banner img {
+        height: 17rem;
+        width:100%;
+        object-fit: cover;
+        object-position: center bottom;
+        display: block;
+    }
+
+    .resto__title {
+
+        h2 {
+        position: relative;
+        background-color: #f6f6f6;
+        margin-top: -2rem ;
+        margin-bottom: 0;
+        padding: 1.5rem;
+        font-family: "Shrikhand", "sans-serif";
+        border-radius: 2rem 2rem 0rem 0rem;
+        }
+
+        .far {
+        font-size: 2rem;
+        position: absolute;
+        right: 1rem;
+        top: 40.5%;
+        }
+
+        .fas {
+            font-size: 2rem;
+            position: absolute;
+            right: 1rem;
+            top: 40.5%;
+            color: transparent;
+            background-image: linear-gradient(0deg, rgb(147, 86, 220), rgb(255, 121, 218));
+            background-clip: text;
+            -webkit-background-clip: text;
+            opacity: 0;
+            transition: all 200ms;
+            transform: scale(1);
+        }
+        
+        .fas:hover {
+            opacity: 1;
+        }
+        
+    }
+
+    .resto-main {
+        padding: 0 ;
+        background-color: #f6f6f6;
+    }
+
+    .menus {
+        display: grid;
+        gap: 1rem;
+        padding: 0rem 1rem;
+        grid-template-columns: 1fr ;
+       
+        @media (min-width: 1000px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        h3 {
+            text-transform: uppercase;
+            font-weight: 400; 
+            position: relative;
+            margin-bottom: 1rem;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 1.5rem;
+                left: 0rem;
+                height: 0.25rem;
+                width: 3rem;
+                background-color: #99E2D0;
+            }
+        }
+    }
+
+    .menus__category {
+        overflow: hidden;    
+        .menus__item {
+            display: flex;
+            overflow: hidden;
+            border-radius: 1rem;  
+            background-color: white;
+            margin: 0.5rem;
+            box-shadow: 2px 1px 8px -3px #7e7e7e;
+            animation: appear 1s;
+            animation-fill-mode: both;
+            
+            @for $i from 2 through 5 {
+                &:nth-child(#{$i}) {
+                animation-delay: (100ms * $i);
+                }
+            }
+
+            .menus__item__prix {
+                display: flex;
+                align-items: flex-end;
+                margin-left: auto;
+                font-weight: 900;
+                padding: 1rem;  
+            }
+            .item__description {
+                padding: 1rem;
+                overflow: hidden;
+            
+                h4,
+                p {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis; 
+                }
+            }
+            .menus__item__check {
+                $button-width: 4rem;
+                background-color: #99E2D0;
+                border-radius: 0rem 1rem 1rem 0rem;
+                margin-right: -$button-width;
+                width: $button-width;
+                transition: all 0.5s;
+                display: grid;
+                place-items: center;
+                i {
+                display: grid;
+                place-items: center;
+                background-color: white;
+                border-radius: 1rem;
+                aspect-ratio: 1/1;
+                width: 2rem;
+                color: #99E2D0;
+                
+                }
+            }
+
+            &:hover {
+                cursor: pointer;
+                .menus__item__check {
+                margin-right: 0; 
+                }
+            i {
+                @include quarterspin;
+                animation: quarterspin 1s ease ;       
+                }
+            }
+        }
+    }
+
+    section.order {
+        height: 15vh;
+        display: grid;
+           place-items: center;
+        button {
+           @include base-button;
+           &:hover {
+           @include zoom;
+           }
+        }
+    }
+}

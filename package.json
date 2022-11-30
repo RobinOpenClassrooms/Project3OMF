@@ -1,0 +1,22 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "Ohmyfood Robin Hurel",
+  "main": "index.js",
+  "scripts": {
+  "sass": "sass --watch style.scss style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobinOpenClassrooms/OhMyFood.git"
+  },
+  "author": "RH",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobinOpenClassrooms/OhMyFood/issues"
+  },
+  "homepage": "https://github.com/RobinOpenClassrooms/OhMyFood#readme",
+  "devDependencies": {
+    "sass": "^1.55.0"
+  }
+}

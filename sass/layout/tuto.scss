@@ -1,0 +1,61 @@
+@import "../utils/mixins.scss";
+@import "../utils/colors.scss";
+
+
+.tuto {
+    
+    position: relative;
+    & ol {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 1em;
+        list-style-type: none;
+        padding: 0;
+        margin: 2.2rem;
+        
+    }
+    counter-reset: steps;
+    & li {
+        &:hover {
+            background-color:lighten( #9356dc, 30%);
+            .fas {
+            color: #9356dc;
+            }
+        }
+        &::before {
+            content:"" counter(steps);
+            counter-increment: steps;
+            background: #9356dc;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    left: 1.50rem;
+    
+        }
+        background-color: #f6f6f6;
+        padding: 1rem 2rem;
+    
+        border-radius: 1rem;
+        @include base-shadow;
+    }
+
+    & h2 {
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        padding-left: 1rem;
+    }
+    
+    
+
+    & i.fas {
+        margin-right: 1rem;
+        padding: 00.5rem;
+        
+    }
+}
