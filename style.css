@@ -353,13 +353,13 @@ footer a, footer p {
   font-size: 2rem;
   position: absolute;
   right: 1rem;
-  top: 40.5%;
+  top: 23rem;
 }
 #page-resto .resto__title .fas {
   font-size: 2rem;
   position: absolute;
   right: 1rem;
-  top: 40.5%;
+  top: 23rem;
   color: transparent;
   background-image: linear-gradient(0deg, rgb(147, 86, 220), rgb(255, 121, 218));
   background-clip: text;
